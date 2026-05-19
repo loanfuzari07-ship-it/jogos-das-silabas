@@ -930,14 +930,29 @@ footer a:hover { color: white; }
   .inside-mockup { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .inside-content { border-radius: 0 0 24px 24px; }
   .como-funciona { grid-template-columns: 1fr; }
-  .bonus-grid { grid-template-columns: 1fr; max-width: 360px; }
-  .planos-grid { max-width: 380px; }
+  .bonus-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+  .planos-grid { max-width: 100%; grid-template-columns: 1fr; }
   .hero-cards { grid-template-columns: 1fr; padding: 0 16px; }
   .testi-grid { grid-template-columns: 1fr; }
   .hero { padding: 32px 0 40px; }
   .hero h1 { padding: 0 16px; }
   .hero-sub { padding: 0 16px; }
   .hero img { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
+
+  /* item01 - bloco tudo que vai receber */
+  .inside-body { grid-template-columns: 1fr; }
+  .inside-body > div:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .inside-body img { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
+
+  /* planos */
+  .plano-mockup-area img { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
+
+  /* bônus */
+  .bonus-grid img { width: 100% !important; max-width: 100% !important; }
+
+  /* garantia */
+  .garantia-box { grid-template-columns: 1fr; text-align: center; }
+  .garantia-box img { margin: 0 auto; display: block; }
 }
 </style>
 </head>
@@ -992,7 +1007,7 @@ footer a:hover { color: white; }
 <!-- ════ BLOCO 2 - MATERIAIS ════ -->
 <section class="materiais">
   <div class="container">
-    <h2 class="sec-title display">Veja alguns dos <em>materiais</em> que você vai receber</h2>
+    <h2 class="sec-title display">Veja alguns dos <em>materiais</em></h2>
 
     <!-- Carousel -->
     <div class="carousel-wrap">
@@ -1410,7 +1425,7 @@ footer a:hover { color: white; }
     <div style="max-width:760px; margin:0 auto 24px; background:var(--escuro); border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.15);">
       <div style="display:grid; grid-template-columns:1fr 1.2fr; align-items:stretch;">
         <div style="padding:24px 20px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border-right:1px solid rgba(255,255,255,0.08);">
-          <img src="images/item01.webp" alt="Kit Joguinhos das Sílabas" style="width:100%; max-width:180px; height:auto; display:block; margin:0 auto; border-radius:12px;">
+          <img src="images/item01.webp" alt="Kit Joguinhos das Sílabas" style="width:100%; width:100%; height:auto; display:block; margin:0 auto; border-radius:0;">
         </div>
         <div style="background:white; padding:28px; border-radius:0 0 24px 0;">
           <div style="display:inline-block; background:var(--destaque); color:white; font-size:11px; font-weight:800; padding:3px 14px; border-radius:100px; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">ITEM 01</div>
@@ -1462,7 +1477,7 @@ footer a:hover { color: white; }
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
         <div style="background:var(--destaque); color:white; font-family:'Baloo 2',cursive; font-weight:900; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; text-align:center;">#1 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-1.webp" alt="Bônus 1" style="max-width:100px; height:auto; display:block; margin:0 auto; border-radius:10px;">
+          <img src="images/bonus-1.webp" alt="Bônus 1" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Sílabas Mágicas</h4>
@@ -1475,7 +1490,7 @@ footer a:hover { color: white; }
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
         <div style="background:var(--destaque); color:white; font-family:'Baloo 2',cursive; font-weight:900; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; text-align:center;">#2 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-2.webp" alt="Bônus 2" style="max-width:100px; height:auto; display:block; margin:0 auto; border-radius:10px;">
+          <img src="images/bonus-2.webp" alt="Bônus 2" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Pinte e Aprenda</h4>
@@ -1488,7 +1503,7 @@ footer a:hover { color: white; }
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
         <div style="background:var(--destaque); color:white; font-family:'Baloo 2',cursive; font-weight:900; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; text-align:center;">#3 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-3.webp" alt="Bônus 3" style="max-width:100px; height:auto; display:block; margin:0 auto; border-radius:10px;">
+          <img src="images/bonus-3.webp" alt="Bônus 3" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Palavras em Construção</h4>
@@ -1501,7 +1516,7 @@ footer a:hover { color: white; }
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
         <div style="background:var(--destaque); color:white; font-family:'Baloo 2',cursive; font-weight:900; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; text-align:center;">#4 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-4.webp" alt="Bônus 4" style="max-width:100px; height:auto; display:block; margin:0 auto; border-radius:10px;">
+          <img src="images/bonus-4.webp" alt="Bônus 4" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Traço-Mágico</h4>
@@ -1514,7 +1529,7 @@ footer a:hover { color: white; }
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
         <div style="background:var(--destaque); color:white; font-family:'Baloo 2',cursive; font-weight:900; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; text-align:center;">#5 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-5.webp" alt="Bônus 5" style="max-width:100px; height:auto; display:block; margin:0 auto; border-radius:10px;">
+          <img src="images/bonus-5.webp" alt="Bônus 5" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Pinta Letras</h4>
@@ -1527,7 +1542,7 @@ footer a:hover { color: white; }
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
         <div style="background:var(--destaque); color:white; font-family:'Baloo 2',cursive; font-weight:900; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; text-align:center;">#6 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-6.webp" alt="Bônus 6" style="max-width:100px; height:auto; display:block; margin:0 auto; border-radius:10px;">
+          <img src="images/bonus-6.webp" alt="Bônus 6" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">ABC com Imagens</h4>
@@ -1545,7 +1560,7 @@ footer a:hover { color: white; }
         <span style="font-family:'Baloo 2',cursive; font-weight:900; font-size:13px; color:#3a2800; letter-spacing:0.1em; text-transform:uppercase;">⚡ SUPER BÔNUS</span>
       </div>
       <div style="padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-        <img src="images/super-bonus.webp" alt="Super Bônus" style="max-width:140px; height:auto; display:block; margin:0 auto; border-radius:10px;">
+        <img src="images/super-bonus.webp" alt="Super Bônus" style="max-width:200px; width:100%; height:auto; display:block; margin:0 auto;">
       </div>
       <div style="padding:20px 24px; text-align:center;">
         <h3 style="font-family:'Baloo 2',cursive; font-weight:800; font-size:18px; color:var(--texto); margin-bottom:8px;">Kit de Grafismo Fonético - Nível 1, 2 e 3</h3>
@@ -1571,7 +1586,7 @@ footer a:hover { color: white; }
             <div class="plano-title basic-title">Plano Básico</div>
           </div>
           <div class="plano-mockup-area" style="background:white;">
-            <img src="images/plano-basico.webp" alt="Plano Básico" style="max-width:120px; height:auto; display:block; margin:0 auto; border-radius:10px;">
+            <img src="images/plano-basico.webp" alt="Plano Básico" style="max-width:180px; width:100%; height:auto; display:block; margin:0 auto;">
           </div>
           <div style="border-top:1px solid #F3F4F6;"></div>
           <div class="plano-body">
@@ -1602,7 +1617,7 @@ footer a:hover { color: white; }
         </div>
         <p style="text-align:center; font-size:13px; font-weight:800; color:var(--texto); padding:10px 20px 4px;">✅ TODOS OS BÔNUS INCLUSOS</p>
         <div class="plano-mockup-area" style="background:white;">
-            <img src="images/plano-completo.webp" alt="Plano Completo" style="max-width:120px; height:auto; display:block; margin:0 auto; border-radius:10px;">
+            <img src="images/plano-completo.webp" alt="Plano Completo" style="max-width:180px; width:100%; height:auto; display:block; margin:0 auto;">
           </div>
           <p style="text-align:center; font-size:13px; font-weight:800; color:var(--texto); padding:10px 20px 0;">Todos os materiais na versão PDF (receba imediato)</p>
           <div style="border-top:1px solid #F3F4F6;"></div>
