@@ -756,7 +756,7 @@ section { width: 100%; }
 .plano-tag.complete { background: rgba(0,0,0,0.12); color: #5B4000; }
 .plano-title {
   font-family: 'Baloo 2', cursive;
-  font-weight: 800; font-size: 18px;
+  font-weight: 800; font-size: 22px;
   margin-bottom: 6px;
 }
 .plano-title.basic-title { color: var(--texto); }
@@ -930,7 +930,9 @@ footer a:hover { color: white; }
   .inside-mockup { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .inside-content { border-radius: 0 0 24px 24px; }
   .como-funciona { grid-template-columns: 1fr; }
-  .bonus-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+  /* bônus 1 por linha no mobile */
+  .bonus-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .bonus-grid img { max-width: 200px !important; }
   .planos-grid { max-width: 100%; grid-template-columns: 1fr; }
   .hero-cards { grid-template-columns: 1fr; padding: 0 16px; }
   .testi-grid { grid-template-columns: 1fr; }
@@ -939,7 +941,7 @@ footer a:hover { color: white; }
   .hero-sub { padding: 0 16px; }
   .hero img { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
 
-  /* item01 - bloco tudo que vai receber */
+  /* item01 - mockup em cima, descrição abaixo */
   .inside-body { grid-template-columns: 1fr; }
   .inside-body > div:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .inside-body img { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
@@ -947,12 +949,12 @@ footer a:hover { color: white; }
   /* planos */
   .plano-mockup-area img { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
 
-  /* bônus */
-  .bonus-grid img { width: 100% !important; max-width: 100% !important; }
-
   /* garantia */
   .garantia-box { grid-template-columns: 1fr; text-align: center; }
   .garantia-box img { margin: 0 auto; display: block; }
+
+  /* títulos dos planos maiores */
+  .plano-title { font-size: 22px !important; }
 }
 </style>
 </head>
@@ -980,7 +982,7 @@ footer a:hover { color: white; }
     </h1>
 
     <!-- Mockup -->
-    <img src="images/hero.webp" alt="Kit Joguinhos das Sílabas" style="max-width:100%; width:460px; height:auto; display:block; margin:0 auto 28px; border-radius:16px;">
+    <img src="images/hero.webp" alt="Kit Joguinhos das Sílabas" style="max-width:100%; width:560px; height:auto; display:block; margin:0 auto 28px; border-radius:16px;">
 
     <p class="hero-sub" style="color:var(--texto);">
       Nada de exercícios chatos! Com esses joguinhos simples e divertidos, as crianças aprendem muito mais fácil! <strong style="color:var(--cta);">Por apenas R$17,90.</strong>
@@ -1073,7 +1075,7 @@ footer a:hover { color: white; }
     </p>
 
     <!-- Imagem criança brincando -->
-    <img src="images/brincando.webp" alt="Criança brincando com os joguinhos" style="max-width:100%; width:560px; height:auto; display:block; margin:0 auto 0; border-radius:16px;">
+    <img src="images/brincando.webp" alt="Criança brincando com os joguinhos" style="max-width:100%; width:420px; height:auto; display:block; margin:0 auto 0; border-radius:16px;">
   </div>
 </section>
 
@@ -1560,7 +1562,7 @@ footer a:hover { color: white; }
         <span style="font-family:'Baloo 2',cursive; font-weight:900; font-size:13px; color:#3a2800; letter-spacing:0.1em; text-transform:uppercase;">⚡ SUPER BÔNUS</span>
       </div>
       <div style="padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-        <img src="images/super-bonus.webp" alt="Super Bônus" style="max-width:200px; width:100%; height:auto; display:block; margin:0 auto;">
+        <img src="images/super-bonus.webp" alt="Super Bônus" style="max-width:300px; width:100%; height:auto; display:block; margin:0 auto;">
       </div>
       <div style="padding:20px 24px; text-align:center;">
         <h3 style="font-family:'Baloo 2',cursive; font-weight:800; font-size:18px; color:var(--texto); margin-bottom:8px;">Kit de Grafismo Fonético - Nível 1, 2 e 3</h3>
@@ -1586,7 +1588,7 @@ footer a:hover { color: white; }
             <div class="plano-title basic-title">Plano Básico</div>
           </div>
           <div class="plano-mockup-area" style="background:white;">
-            <img src="images/plano-basico.webp" alt="Plano Básico" style="max-width:180px; width:100%; height:auto; display:block; margin:0 auto;">
+            <img src="images/plano-basico.webp" alt="Plano Básico" style="max-width:260px; width:100%; height:auto; display:block; margin:0 auto;">
           </div>
           <div style="border-top:1px solid #F3F4F6;"></div>
           <div class="plano-body">
@@ -1617,7 +1619,7 @@ footer a:hover { color: white; }
         </div>
         <p style="text-align:center; font-size:13px; font-weight:800; color:var(--texto); padding:10px 20px 4px;">✅ TODOS OS BÔNUS INCLUSOS</p>
         <div class="plano-mockup-area" style="background:white;">
-            <img src="images/plano-completo.webp" alt="Plano Completo" style="max-width:180px; width:100%; height:auto; display:block; margin:0 auto;">
+            <img src="images/plano-completo.webp" alt="Plano Completo" style="max-width:260px; width:100%; height:auto; display:block; margin:0 auto;">
           </div>
           <p style="text-align:center; font-size:13px; font-weight:800; color:var(--texto); padding:10px 20px 0;">Todos os materiais na versão PDF (receba imediato)</p>
           <div style="border-top:1px solid #F3F4F6;"></div>
@@ -1760,6 +1762,7 @@ function toggleFaq(btn) {
     { img: 'images/slide-9.webp', label: 'Slide 9' },
     { img: 'images/slide-10.webp', label: 'Slide 10' },
     { img: 'images/slide-11.webp', label: 'Slide 11' },
+    { img: 'images/slide-12.webp', label: 'Slide 12' },
   ];
 
   const track = document.getElementById('carTrack');
