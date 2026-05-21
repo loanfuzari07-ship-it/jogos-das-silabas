@@ -4,11 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Joguinhos das Sílabas - Sabidinhos Kids</title>
+
+<!-- Preconnect para fontes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Fonte sem bloquear renderização -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"></noscript>
+
+<!-- Meta SEO -->
+<meta name="description" content="Kit de joguinhos educativos para ensinar sílabas e ajudar crianças a ler e formar palavras 5x mais rápido, brincando!">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Joguinhos das Sílabas - Sabidinhos Kids">
+<meta property="og:description" content="Kit de joguinhos educativos para ensinar sílabas e ajudar crianças a ler e formar palavras 5x mais rápido, brincando!">
+<meta property="og:type" content="website">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Anti-CLS: reserva espaço para imagens */
+img { display: block; max-width: 100%; height: auto; }
+
+/* Font fallback enquanto Poppins carrega */
+body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 
 :root {
   --azul:       #EFF8FF;
@@ -171,7 +190,7 @@ section { width: 100%; }
    BLOCO 1 - HERO
 ════════════════════════════════════ */
 .hero {
-  background: var(--azul);
+  background: var(--escuro);
   padding: 64px 20px 56px;
   text-align: center;
   position: relative;
@@ -183,19 +202,19 @@ section { width: 100%; }
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: clamp(28px, 5.5vw, 50px);
-  color: var(--texto);
+  color: white;
   line-height: 1.15;
   max-width: 700px;
   margin: 0 auto 18px;
   text-transform: uppercase;
 }
-.hero h1 em { color: var(--destaque); font-style: normal; }
+.hero h1 em { color: var(--acento); font-style: normal; }
 .hero h1 strong { color: var(--cta); }
 
 .hero-sub {
   font-size: clamp(15px, 2.5vw, 18px);
-  color: #4A5568;
-  font-weight: 700;
+  color: white !important;
+  font-weight: 400;
   max-width: 560px;
   margin: 0 auto 28px;
   line-height: 1.55;
@@ -243,14 +262,14 @@ section { width: 100%; }
   .hero-cards { grid-template-columns: 1fr; }
 }
 .hero-card {
-  background: white;
+  background: rgba(255,255,255,0.08);
   border-radius: 14px;
   padding: 16px 18px;
   display: flex;
   align-items: flex-start;
   gap: 11px;
   text-align: left;
-  border: 1.5px solid rgba(96,191,255,0.35);
+  border: 1.5px solid rgba(255,255,255,0.15);
 }
 .hero-card .hc-icon {
   width: 22px; height: 22px;
@@ -263,13 +282,13 @@ section { width: 100%; }
   font-size: 12px;
   font-weight: 900;
 }
-.hero-card p { font-size: 13px; font-weight: 400; color: var(--texto); line-height: 1.45; }
+.hero-card p { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.45; }
 
 /* ════════════════════════════════════
    BLOCO 2 - MATERIAIS
 ════════════════════════════════════ */
 .materiais {
-  background: var(--branco);
+  background: var(--escuro);
   padding: 68px 20px;
 }
 .mat-grid {
@@ -342,22 +361,22 @@ section { width: 100%; }
 .car-btn {
   width: 42px; height: 42px;
   border-radius: 50%;
-  background: var(--destaque);
-  color: white; border: none;
+  background: var(--acento);
+  color: #3a2800; border: none;
   font-size: 18px; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.2s;
 }
-.car-btn:hover { background: #6d2fd4; }
+.car-btn:hover { background: #e6c000; }
 .car-dots { display: flex; gap: 7px; }
 .car-dot {
   width: 9px; height: 9px;
   border-radius: 50%;
-  background: var(--borda);
+  background: rgba(255,255,255,0.3);
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
 }
-.car-dot.active { background: var(--destaque); transform: scale(1.3); }
+.car-dot.active { background: var(--acento); transform: scale(1.3); }
 
 .materiais-note {
   text-align: center;
@@ -732,8 +751,8 @@ section { width: 100%; }
   background: white;
 }
 .plano-card.destaque {
-  border: 3px solid var(--acento);
-  box-shadow: 0 0 40px rgba(255,217,61,0.15);
+  border: 3px solid var(--azul);
+  box-shadow: 0 0 0 4px rgba(255,217,61,0.4), 0 8px 32px rgba(0,0,0,0.1);
   background: white;
 }
 .plano-header {
@@ -836,18 +855,18 @@ section { width: 100%; }
    BLOCO 9 - GARANTIA
 ════════════════════════════════════ */
 .garantia {
-  background: #F0FDF8;
+  background: var(--escuro);
   padding: 68px 20px;
-  border-top: 4px solid var(--cta);
-  border-bottom: 4px solid var(--cta);
+  border-top: 4px solid var(--acento);
+  border-bottom: 4px solid var(--acento);
 }
 .garantia-box {
   max-width: 620px;
   margin: 0 auto;
-  background: white;
+  background: rgba(255,255,255,0.07);
   border-radius: 24px;
   padding: 40px 32px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
   display: grid;
   grid-template-columns: 140px 1fr;
   gap: 32px;
@@ -871,10 +890,10 @@ section { width: 100%; }
 .garantia-text h3 {
   font-family: 'Poppins', sans-serif;
   font-weight: 800; font-size: 22px;
-  color: var(--cta); margin-bottom: 10px;
+  color: var(--acento); margin-bottom: 10px;
 }
-.garantia-text p { font-size: 15px; color: #374151; line-height: 1.7; margin-bottom: 8px; }
-.garantia-text strong { color: var(--texto); }
+.garantia-text p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 8px; }
+.garantia-text strong { color: white; }
 
 /* ════════════════════════════════════
    BLOCO 10 - FAQ
@@ -978,56 +997,62 @@ footer a:hover { color: white; }
 </head>
 <body>
 
-<!-- URGENCY BAR -->
-<div class="urgency-bar">
-  🔥 Oferta especial! Termina hoje <span style="color:var(--acento); font-weight:900;" id="today-date"></span>
-</div>
-<script>
-  (function(){
-    const d = new Date();
-    const dias = ['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
-    const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
-    const txt = String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + d.getFullYear();
-    document.getElementById('today-date').textContent = txt;
-  })();
-</script>
 
 <!-- ════ HERO ════ -->
 <section class="hero">
   <div class="container">
     <h1 class="display">
-      Seu filho vai dominar as sílabas e formar palavras <em>5x mais rápido</em> com esses joguinhos!
+      TORNE A ALFABETIZAÇÃO DAS CRIANÇAS <em>10X MAIS DIVERTIDA</em> COM ESSAS ATIVIDADES!
     </h1>
 
     <!-- Mockup -->
-    <img src="images/hero.webp" alt="Kit Joguinhos das Sílabas" style="max-width:100%; width:560px; height:auto; display:block; margin:0 auto 28px; border-radius:16px;">
+    <img src="images/hero.webp" alt="Kit Joguinhos das Sílabas" fetchpriority="high" decoding="async" style="max-width:100%; width:560px; height:auto; display:block; margin:0 auto 28px; border-radius:16px;">
 
-    <p class="hero-sub" style="color:var(--texto);">
-      Com 15 minutos por dia. <strong style="color:var(--cta);">Por apenas R$17,90.</strong>
+    <p class="hero-sub">
+      Atividades interativas para imprimir e aplicar, que ajudam os pequenos a aprender sílabas, formar palavras e desenvolver leitura e escrita enquanto se divertem!
     </p>
 
     <!-- Cards informativos -->
-    <div class="hero-cards">
-      <div class="hero-card">
-        <div class="hc-icon">&#10003;</div>
-        <p>Ideal para crianças de 2 a 12 anos, no ritmo natural de cada uma</p>
+  </div>
+</section>
+
+<!-- ════ BLOCO 3B - EM POUCOS DIAS ════ -->
+<section style="background:var(--pessego); padding:68px 20px; border-top:4px solid var(--acento);">
+  <div class="container">
+    <h2 class="sec-title display" style="font-size:clamp(28px,5vw,44px);">Se você quer ver seu filho ou seus alunos...</h2>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:720px; margin:0 auto;">
+
+      <div style="background:white; border-radius:20px; padding:28px 24px; display:flex; flex-direction:column; gap:14px; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-bottom:4px solid var(--destaque);">
+        <div style="width:52px;height:52px;background:#EDE9FE;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;">💪</div>
+        <p style="font-size:15px; font-weight:700; color:var(--texto); line-height:1.4;">Sentindo mais confiança ao tentar ler e formar palavras novas</p>
       </div>
-      <div class="hero-card">
-        <div class="hc-icon">&#10003;</div>
-        <p>Mesmo que ainda não reconheça letras ou sons</p>
+
+      <div style="background:white; border-radius:20px; padding:28px 24px; display:flex; flex-direction:column; gap:14px; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-bottom:4px solid var(--cta);">
+        <div style="width:52px;height:52px;background:#D1FAE5;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;">🧠</div>
+        <p style="font-size:15px; font-weight:700; color:var(--texto); line-height:1.4;">Desenvolvendo consciência fonológica</p>
       </div>
-      <div class="hero-card">
-        <div class="hc-icon">&#10003;</div>
-        <p>Funciona também com crianças com TDAH, Autismo ou dificuldades de foco</p>
+
+      <div style="background:white; border-radius:20px; padding:28px 24px; display:flex; flex-direction:column; gap:14px; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-bottom:4px solid var(--primaria);">
+        <div style="width:52px;height:52px;background:#DBEAFE;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;">🎵</div>
+        <p style="font-size:15px; font-weight:700; color:var(--texto); line-height:1.4;">Reconhecendo sílabas e sons com mais facilidade</p>
       </div>
+
+      <div style="background:var(--acento); border-radius:20px; padding:28px 24px; display:flex; flex-direction:column; gap:14px; box-shadow:0 4px 20px rgba(255,217,61,0.3);">
+        <div style="width:52px;height:52px;background:rgba(0,0,0,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;">😄</div>
+        <p style="font-size:15px; font-weight:800; color:#3a2800; line-height:1.4;">E o melhor: Se divertindo enquanto aprende!</p>
+      </div>
+
     </div>
+
+    <p style="text-align:center; font-size:clamp(16px,2.5vw,20px); font-weight:800; color:var(--texto); margin-top:36px; letter-spacing:0.04em;">ESSE MATERIAL FOI PENSADO PRA VOCÊS!</p>
+
   </div>
 </section>
 
 <!-- ════ BLOCO 2 - MATERIAIS ════ -->
 <section class="materiais">
   <div class="container">
-    <h2 class="sec-title display">Veja alguns dos <em>materiais</em></h2>
+    <h2 class="sec-title display" style="color:white;">VEJA ALGUNS DOS MATERIAIS</h2>
 
     <!-- Carousel -->
     <div class="carousel-wrap">
@@ -1041,377 +1066,73 @@ footer a:hover { color: white; }
       <button class="car-btn" id="carNext">›</button>
     </div>
 
-    <p style="text-align:center; font-size:15px; font-weight:400; color:var(--texto); margin-top:32px;">
-      <strong>Nada de exercícios chatos!</strong> Com essas atividades simples e divertidas, as crianças aprendem muito mais fácil!
-    </p>
-
-  </div>
-</section>
-
-<!-- ════ BLOCO 3 - MECANISMO ════ -->
-<section class="beneficios">
-  <div class="container">
-    <h2 class="sec-title display">Por que os Joguinhos das Sílabas <em>facilitam</em> o aprendizado?</h2>
-
-    <p class="mecanismo-text">
-      Porque crianças aprendem melhor quando estão brincando <strong>e isso é comprovado pela ciência.</strong><br><br>
-      Nos joguinhos, ela não fica só copiando sílabas no papel. Ela <strong>vê, escuta, combina, encaixa e forma palavras</strong> de um jeito mais leve e natural. Isso ajuda a prender a atenção, estimular a memória e fazer a criança entender as sílabas na prática.
-    </p>
-
-    <!-- Imagem criança brincando -->
-    <img src="images/brincando.webp" alt="Criança brincando com os joguinhos" style="max-width:100%; width:420px; height:auto; display:block; margin:0 auto 0; border-radius:16px;">
-  </div>
-</section>
-
-<!-- ════ BLOCO 3B - EM POUCOS DIAS ════ -->
-<section style="background:var(--pessego); padding:68px 20px; border-top:4px solid var(--acento);">
-  <div class="container">
-    <h2 class="sec-title display" style="font-size:clamp(28px,5vw,44px);">Em poucos dias você vai <em>notar a criança:</em></h2>
-
-    <div class="ben-grid">
-      <div class="ben-card" style="border-color:rgba(0,0,0,0.06); background:white;">
-        <div class="ben-ico" style="background:var(--primaria);">🎵</div>
-        <div><p style="color:var(--texto); font-weight:700;">Reconhecendo sílabas e sons com mais facilidade</p></div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px; max-width:620px; margin:32px auto 0;">
+      <div style="background:rgba(255,255,255,0.08); border-radius:14px; padding:16px 18px; display:flex; align-items:flex-start; gap:11px; border:1.5px solid rgba(255,255,255,0.15);">
+        <div class="hc-icon" style="border-color:white; color:white;">&#10003;</div>
+        <p style="font-size:13px; font-weight:600; color:white; line-height:1.45;">Ideal para crianças a partir de 3 anos, no ritmo natural de cada uma</p>
       </div>
-      <div class="ben-card" style="border-color:rgba(0,0,0,0.06); background:white;">
-        <div class="ben-ico" style="background:var(--destaque);">💪</div>
-        <div><p style="color:var(--texto); font-weight:700;">Sentindo mais confiança ao tentar ler e formar palavras novas</p></div>
-      </div>
-      <div class="ben-card" style="border-color:rgba(0,0,0,0.06); background:white;">
-        <div class="ben-ico" style="background:var(--cta);">🧠</div>
-        <div><p style="color:var(--texto); font-weight:700;">Desenvolvendo consciência fonológica, enriquecendo o vocabulário e fortalecendo a memória</p></div>
-      </div>
-      <div class="ben-card" style="border-color:rgba(0,0,0,0.06); background:white;">
-        <div class="ben-ico" style="background:var(--primaria);">🕐</div>
-        <div><p style="color:var(--texto); font-weight:700;">Aprendendo no ritmo dela, sem frustração ou comparação</p></div>
-      </div>
-      <div class="ben-card" style="border-color:rgba(0,0,0,0.06); background:white;">
-        <div class="ben-ico" style="background:var(--destaque);">🚀</div>
-        <div><p style="color:var(--texto); font-weight:700;">Aprendendo 5x mais rápido que atividades escritas</p></div>
-      </div>
-      <div class="ben-card" style="border-color:rgba(0,0,0,0.06); background:white;">
-        <div class="ben-ico" style="background:var(--acento);">😄</div>
-        <div><p style="color:var(--texto); font-weight:700;">E o melhor: Se divertindo enquanto aprende!</p></div>
+      <div style="background:rgba(255,255,255,0.08); border-radius:14px; padding:16px 18px; display:flex; align-items:flex-start; gap:11px; border:1.5px solid rgba(255,255,255,0.15);">
+        <div class="hc-icon" style="border-color:white; color:white;">&#10003;</div>
+        <p style="font-size:13px; font-weight:600; color:white; line-height:1.45;">Funciona também com crianças com TDAH, Autismo ou dificuldades de foco</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ════ BLOCO CTA ESCURO ════ -->
-<section style="background:var(--escuro); padding:60px 20px; text-align:center;">
-  <div class="container">
-    <p style="font-family:'Poppins',cursive; font-weight:800; font-size:clamp(20px,3.5vw,30px); color:white; max-width:620px; margin:0 auto 32px; line-height:1.35;">
-      Ainda essa semana você vai ver seu filho formando novas palavras com os <em style="color:var(--acento);">Joguinhos das Sílabas!</em>
-    </p>
-    <a href="#oferta" class="btn-cta">QUERO MEU KIT AGORA</a>
   </div>
 </section>
 
 <!-- ════ BLOCO 4 - IDEAL PRA VOCÊ ════ -->
 <section class="ideal">
   <div class="container">
-    <h2 class="sec-title display">Ideal pra <em>você</em> que deseja…</h2>
+    <h2 class="sec-title display">Esse material é ideal pra <em>você</em> que deseja...</h2>
 
-    <div class="ideal-list">
-      <div class="ideal-item">
-        <div class="i-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2a7 7 0 0 1 7 7c0 4-3.5 7-7 11C8.5 16 5 13 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/>
-          </svg>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:760px; margin:0 auto;">
+
+      <div style="background:white; border-radius:20px; padding:32px 26px; box-shadow:0 6px 24px rgba(0,0,0,0.07); display:flex; flex-direction:column; gap:16px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:0; left:0; width:5px; height:100%; background:var(--destaque); border-radius:20px 0 0 20px;"></div>
+        <div style="width:52px;height:52px;background:#EDE9FE;border-radius:16px;display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
-        <span>Desenvolver a consciência silábica da criança de forma eficaz</span>
+        <p style="font-size:16px; font-weight:700; color:var(--texto); line-height:1.45;">Estimular a criatividade, a atenção e a participação ativa</p>
       </div>
-      <div class="ideal-item">
-        <div class="i-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-          </svg>
+
+      <div style="background:white; border-radius:20px; padding:32px 26px; box-shadow:0 6px 24px rgba(0,0,0,0.07); display:flex; flex-direction:column; gap:16px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:0; left:0; width:5px; height:100%; background:var(--cta); border-radius:20px 0 0 20px;"></div>
+        <div style="width:52px;height:52px;background:#D1FAE5;border-radius:16px;display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A9D5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
         </div>
-        <span>Estimular a criatividade, a atenção e a participação ativa</span>
+        <p style="font-size:16px; font-weight:700; color:var(--texto); line-height:1.45;">Sair das atividades repetitivas e cansativas</p>
       </div>
-      <div class="ideal-item">
-        <div class="i-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
-          </svg>
+
+      <div style="background:white; border-radius:20px; padding:32px 26px; box-shadow:0 6px 24px rgba(0,0,0,0.07); display:flex; flex-direction:column; gap:16px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:0; left:0; width:5px; height:100%; background:var(--primaria); border-radius:20px 0 0 20px;"></div>
+        <div style="width:52px;height:52px;background:#DBEAFE;border-radius:16px;display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60BFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
         </div>
-        <span>Sair das atividades repetitivas e cansativas de copiar sílabas</span>
+        <p style="font-size:16px; font-weight:700; color:var(--texto); line-height:1.45;">Prender mais a atenção da criança durante o aprendizado</p>
       </div>
-      <div class="ideal-item">
-        <div class="i-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
-          </svg>
+
+      <div style="background:var(--escuro); border-radius:20px; padding:32px 26px; box-shadow:0 6px 24px rgba(27,42,74,0.2); display:flex; flex-direction:column; gap:16px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:0; left:0; width:5px; height:100%; background:var(--acento); border-radius:20px 0 0 20px;"></div>
+        <div style="width:52px;height:52px;background:rgba(255,217,61,0.15);border-radius:16px;display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFD93D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <span>Prender mais a atenção da criança durante o aprendizado</span>
+        <p style="font-size:16px; font-weight:700; color:white; line-height:1.45;">Tornar o processo de alfabetização mais leve, divertido e eficaz</p>
       </div>
-      <div class="ideal-item">
-        <div class="i-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-          </svg>
-        </div>
-        <span>Despertar o interesse pelas palavras, pelos sons e pela leitura</span>
-      </div>
-      <div class="ideal-item">
-        <div class="i-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-        </div>
-        <span>Tornar o processo de alfabetização mais leve, divertido e eficaz</span>
-      </div>
+
     </div>
-
-  </div>
-</section>
-
-<!-- ════ BLOCO 5 - DEPOIMENTOS ════ -->
-<section class="depoimentos">
-  <div class="container">
-    <h2 class="sec-title display">Veja o que dizem sobre os <em>Joguinhos das Sílabas</em></h2>
-
-<style>
-#fb-comments {
-  font-family: 'Poppins', "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  max-width: 680px;
-  margin: 0 auto;
-}
-#fb-comments .fb-heading {
-  margin: 0 0 16px;
-  font-size: 15px;
-  color: #555;
-  font-weight: 600;
-}
-#fb-comments .comments-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  border: 1px solid #e9ebee;
-  border-radius: 16px;
-  padding: 20px;
-  background: white;
-}
-#fb-comments .comment {
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-  width: 100%;
-  gap: 10px;
-}
-#fb-comments .comment.answer {
-  margin-left: 52px;
-  max-width: calc(100% - 52px);
-  margin-bottom: 8px;
-}
-#fb-comments .comment.answer + .answer { margin-top: -8px; }
-#fb-comments .comment .user-avatar {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  color: white;
-}
-#fb-comments .comment .comment-data { width: 100%; }
-#fb-comments .comment .comment-data .user {
-  border-radius: 12px;
-  background-color: #f0f2f5;
-  padding: 8px 12px 10px;
-}
-#fb-comments .comment .comment-data .user .name {
-  margin: 0 0 2px;
-  color: #1b74e4;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-}
-#fb-comments .comment .comment-data .user .text {
-  margin: 0;
-  font-size: 14px;
-  color: #050505;
-  line-height: 1.55;
-}
-#fb-comments .comment .comment-data .buttons {
-  margin: 4px 0 0 12px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-#fb-comments .comment .comment-data .buttons time,
-#fb-comments .comment .comment-data .buttons like,
-#fb-comments .comment .comment-data .buttons answer,
-#fb-comments .comment .comment-data .buttons span {
-  font-size: 12px;
-  color: #888;
-  user-select: none;
-}
-#fb-comments .comment .comment-data .buttons like,
-#fb-comments .comment .comment-data .buttons answer {
-  font-weight: 700;
-  cursor: pointer;
-}
-#fb-comments .comment .comment-data .buttons like[liked] { color: #1b74e4; }
-#fb-comments .comment .comment-data .buttons answer { cursor: default; }
-#fb-comments .comment likes {
-  position: absolute;
-  bottom: -8px;
-  right: 0;
-  background-color: #fff;
-  border: 2px solid #eaebef;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  font-size: 12px;
-  color: #888;
-  border-radius: 100px;
-  padding: 1px 6px 1px 2px;
-}
-#fb-comments .comment likes::before {
-  content: url(https://i.ibb.co/s2Sshym/likes.png);
-  cursor: pointer;
-  line-height: 1;
-}
-#fb-comments .comments-closed {
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-  margin: 14px 0 0;
-  color: #888;
-}
-</style>
-
-<div id="fb-comments">
-  <h2 class="fb-heading"><b>119 comentários</b> - <small>Exibindo os mais relevantes</small></h2>
-  <div class="comments-container">
-
-    <div class="comment" data-comment-id="1">
-      <img src="images/ana-maria.webp" alt="Ana Maria" class="user-avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-      <div class="comment-data">
-        <div class="user">
-          <p class="name">Ana Maria Souza</p>
-          <p class="text">Gente, comprei ontem e já imprimi hoje. Minha filha de 5 anos viu e não queria parar. Recomendo demais!</p>
-        </div>
-        <div class="buttons"><like>Curtir</like><span>·</span><answer>Responder</answer><span>·</span><time>2 dias atrás</time></div>
-      </div>
-      <likes>47</likes>
-    </div>
-
-    <div class="comment" data-comment-id="2">
-      <img src="images/carla.webp" alt="Carla" class="user-avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-      <div class="comment-data">
-        <div class="user">
-          <p class="name">Carla Pereira</p>
-          <p class="text">Meu filho tem TDAH e nada segurava a atenção dele. Com esses joguinhos ficou quase meia hora concentrado sem eu precisar falar nada. Fiquei de queixo caído honestamente.</p>
-        </div>
-        <div class="buttons"><like>Curtir</like><span>·</span><answer>Responder</answer><span>·</span><time>4 dias atrás</time></div>
-      </div>
-      <likes>83</likes>
-    </div>
-
-    <div class="comment" data-comment-id="3">
-      <img src="images/renata.webp" alt="Renata" class="user-avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-      <div class="comment-data">
-        <div class="user">
-          <p class="name">Renata Figueiredo</p>
-          <p class="text">Sou professora e comprei pra usar em sala. Valeu cada centavo. Os alunos pediram pra levar pra casa!</p>
-        </div>
-        <div class="buttons"><like>Curtir</like><span>·</span><answer>Responder</answer><span>·</span><time>1 semana atrás</time></div>
-      </div>
-      <likes>61</likes>
-    </div>
-
-    <div class="comment" data-comment-id="4">
-      <img src="images/marcia.webp" alt="Márcia" class="user-avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-      <div class="comment-data">
-        <div class="user">
-          <p class="name">Márcia Lima</p>
-          <p class="text">Tinha um pouco de receio por ser digital mas fui surpreendida. Os arquivos são muito bem feitos e a minha neta simplesmente não larga. Que investimento bom!</p>
-        </div>
-        <div class="buttons"><like>Curtir</like><span>·</span><answer>Responder</answer><span>·</span><time>1 semana atrás</time></div>
-      </div>
-      <likes>34</likes>
-    </div>
-
-    <div class="comment" data-comment-id="5">
-      <img src="images/juliana.webp" alt="Juliana" class="user-avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-      <div class="comment-data">
-        <div class="user">
-          <p class="name">Juliana Oliveira</p>
-          <p class="text">Meu filho pediu pra brincar três vezes no mesmo dia. Três vezes! Nunca tinha acontecido isso antes com nenhuma atividade.</p>
-        </div>
-        <div class="buttons"><like>Curtir</like><span>·</span><answer>Responder</answer><span>·</span><time>2 semanas atrás</time></div>
-      </div>
-      <likes>29</likes>
-    </div>
-
-    <div class="comment answer" data-comment-id="5b">
-      <img src="images/patricia.webp" alt="Patricia" class="user-avatar" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-      <div class="comment-data">
-        <div class="user">
-          <p class="name">Patricia Santos</p>
-          <p class="text">Minha filha agora pede pra estudar. Nunca pensei que ia escrever isso kkk</p>
-        </div>
-        <div class="buttons"><like>Curtir</like><span>·</span><answer>Responder</answer><span>·</span><time>2 semanas atrás</time></div>
-      </div>
-      <likes>18</likes>
-    </div>
-
-  </div>
-  <h4 class="comments-closed">Este conteúdo não recebe mais comentários.</h4>
-</div>
-
-<script>
-(function(){
-  const likeComment = id => {
-    const c = document.querySelector(`[data-comment-id="${id}"]`);
-    const n = Number(c.querySelector('likes').innerText);
-    c.querySelector('like').innerText = 'Descurtir';
-    c.querySelector('like').setAttribute('liked', '');
-    c.querySelector('likes').innerText = n + 1;
-  };
-  const unlikeComment = id => {
-    const c = document.querySelector(`[data-comment-id="${id}"]`);
-    const n = Number(c.querySelector('likes').innerText);
-    c.querySelector('like').innerText = 'Curtir';
-    c.querySelector('like').removeAttribute('liked');
-    c.querySelector('likes').innerText = n - 1;
-  };
-  const setup = () => {
-    let liked = JSON.parse(localStorage.likedComments || '[]');
-    liked.forEach(id => likeComment(id));
-    document.querySelectorAll('like').forEach(el => {
-      el.addEventListener('click', function(){
-        const isLiked = this.innerText === 'Curtir';
-        const id = this.closest('.comment').getAttribute('data-comment-id');
-        if(isLiked){ likeComment(id); liked.push(id); }
-        else { unlikeComment(id); liked = liked.filter(x => x !== id); }
-        localStorage.likedComments = JSON.stringify(liked);
-      });
-    });
-  };
-  document.addEventListener('DOMContentLoaded', setup);
-  if(document.readyState === 'complete') setup();
-})();
-</script>
-
   </div>
 </section>
 
 <!-- ════ BLOCO 6 - TUDO QUE VOCÊ RECEBE ════ -->
 <section class="conteudo">
   <div class="container">
-    <h2 class="sec-title display" style="color:white; background:var(--destaque); display:block; padding:8px 24px; border-radius:10px; font-size:clamp(16px,3vw,22px); letter-spacing:0.04em; margin-bottom:32px; max-width:760px; margin-left:auto; margin-right:auto; text-align:center;">TUDO QUE VOCÊ VAI <span style="color:var(--acento);">RECEBER</span> AO ADQUIRIR SEU PRODUTO</h2>
+    <h2 class="sec-title display" style="color:white; font-size:clamp(20px,3.5vw,32px); letter-spacing:0.04em; margin-bottom:32px;">TUDO QUE VOCÊ VAI RECEBER AO ADQUIRIR <span style="color:var(--acento);">HOJE</span></h2>
 
     <!-- ITEM 01 -->
     <div style="max-width:760px; margin:0 auto 24px; background:var(--escuro); border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.15);">
       <div class="inside-body">
         <div style="padding:24px 20px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border-right:1px solid rgba(255,255,255,0.08);">
-          <img src="images/item01.webp" alt="Kit Joguinhos das Sílabas" style="width:100%; width:100%; height:auto; display:block; margin:0 auto; border-radius:0;">
+          <img src="images/item01.webp" loading="lazy" decoding="async" alt="Kit Joguinhos das Sílabas" style="width:100%; width:100%; height:auto; display:block; margin:0 auto; border-radius:0;">
         </div>
         <div style="background:white; padding:28px; border-radius:0 0 24px 0;">
           <div style="display:inline-block; background:var(--destaque); color:white; font-size:11px; font-weight:800; padding:3px 14px; border-radius:100px; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">ITEM 01</div>
@@ -1423,7 +1144,7 @@ footer a:hover { color: white; }
             <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; font-weight:700; color:var(--cta); line-height:1.4; padding:9px 0; border-bottom:1px solid #F3F4F6;"><span style="color:var(--cta); flex-shrink:0; margin-top:1px;">✔</span>Descubra as Sílabas - capa do livreto, 38 cartões com figuras e 76 cartões com sílabas</li>
             <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; font-weight:700; color:var(--cta); line-height:1.4; padding:9px 0; border-bottom:1px solid #F3F4F6;"><span style="color:var(--cta); flex-shrink:0; margin-top:1px;">✔</span>Complete as Sílabas Complexas - 99 cartões para completar palavras</li>
             <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; font-weight:700; color:var(--cta); line-height:1.4; padding:9px 0; border-bottom:1px solid #F3F4F6;"><span style="color:var(--cta); flex-shrink:0; margin-top:1px;">✔</span>Cards Ilustrados e divertidos</li>
-            <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; font-weight:700; color:var(--cta); line-height:1.4; padding:9px 0; border-bottom:1px solid #F3F4F6;"><span style="color:var(--cta); flex-shrink:0; margin-top:1px;">✔</span>Guia dos jogos completo</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:13px; font-weight:700; color:var(--cta); line-height:1.4; padding:9px 0; border-bottom:1px solid #F3F4F6;"><span style="color:var(--cta); flex-shrink:0; margin-top:1px;">✔</span>Atividades prontas pra praticar</li>
             <li style="display:flex; justify-content:center; font-size:13px; font-weight:800; color:var(--destaque); line-height:1.4; padding-top:12px;">E MUITO MAIS...</li>
           </ul>
         </div>
@@ -1461,9 +1182,9 @@ footer a:hover { color: white; }
     <div class="bonus-grid">
 
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
-        <div style="background:var(--destaque); color:white; font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#1 - BÔNUS HOJE!</div>
+        <div style="background:var(--destaque); color:var(--acento); font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#1 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-1.webp" alt="Bônus 1" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
+          <img src="images/bonus-1.webp" loading="lazy" decoding="async" alt="Bônus 1" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Poppins',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Sílabas Mágicas</h4>
@@ -1474,9 +1195,9 @@ footer a:hover { color: white; }
       </div>
 
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
-        <div style="background:var(--destaque); color:white; font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#2 - BÔNUS HOJE!</div>
+        <div style="background:var(--destaque); color:var(--acento); font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#2 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-2.webp" alt="Bônus 2" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
+          <img src="images/bonus-2.webp" loading="lazy" decoding="async" alt="Bônus 2" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Poppins',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Pinte e Aprenda</h4>
@@ -1487,9 +1208,9 @@ footer a:hover { color: white; }
       </div>
 
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
-        <div style="background:var(--destaque); color:white; font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#3 - BÔNUS HOJE!</div>
+        <div style="background:var(--destaque); color:var(--acento); font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#3 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-3.webp" alt="Bônus 3" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
+          <img src="images/bonus-3.webp" loading="lazy" decoding="async" alt="Bônus 3" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Poppins',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Palavras em Construção</h4>
@@ -1500,9 +1221,9 @@ footer a:hover { color: white; }
       </div>
 
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
-        <div style="background:var(--destaque); color:white; font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#4 - BÔNUS HOJE!</div>
+        <div style="background:var(--destaque); color:var(--acento); font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#4 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-4.webp" alt="Bônus 4" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
+          <img src="images/bonus-4.webp" loading="lazy" decoding="async" alt="Bônus 4" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Poppins',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Traço-Mágico</h4>
@@ -1513,9 +1234,9 @@ footer a:hover { color: white; }
       </div>
 
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
-        <div style="background:var(--destaque); color:white; font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#5 - BÔNUS HOJE!</div>
+        <div style="background:var(--destaque); color:var(--acento); font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#5 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-5.webp" alt="Bônus 5" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
+          <img src="images/bonus-5.webp" loading="lazy" decoding="async" alt="Bônus 5" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Poppins',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">Pinta Letras</h4>
@@ -1526,9 +1247,9 @@ footer a:hover { color: white; }
       </div>
 
       <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
-        <div style="background:var(--destaque); color:white; font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#6 - BÔNUS HOJE!</div>
+        <div style="background:var(--destaque); color:var(--acento); font-family:'Poppins',cursive; font-weight:900; font-size:15px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:center;">#6 - BÔNUS HOJE!</div>
         <div style="padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-          <img src="images/bonus-6.webp" alt="Bônus 6" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
+          <img src="images/bonus-6.webp" loading="lazy" decoding="async" alt="Bônus 6" style="max-width:140px; width:100%; height:auto; display:block; margin:0 auto;">
         </div>
         <div style="padding:14px 16px; text-align:center;">
           <h4 style="font-family:'Poppins',cursive; font-weight:800; font-size:15px; color:var(--texto); margin-bottom:8px;">ABC com Imagens</h4>
@@ -1546,7 +1267,7 @@ footer a:hover { color: white; }
         <span style="font-family:'Poppins',cursive; font-weight:900; font-size:17px; color:#3a2800; letter-spacing:0.08em; text-transform:uppercase;">⚡ SUPER BÔNUS</span>
       </div>
       <div style="padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:white; min-height:90px;">
-        <img src="images/super-bonus.webp" alt="Super Bônus" style="max-width:300px; width:100%; height:auto; display:block; margin:0 auto;">
+        <img src="images/super-bonus.webp" loading="lazy" decoding="async" alt="Super Bônus" style="max-width:300px; width:100%; height:auto; display:block; margin:0 auto;">
       </div>
       <div style="padding:20px 24px; text-align:center;">
         <h3 style="font-family:'Poppins',cursive; font-weight:800; font-size:18px; color:var(--texto); margin-bottom:8px;">Kit de Grafismo Fonético - Nível 1, 2 e 3</h3>
@@ -1561,52 +1282,53 @@ footer a:hover { color: white; }
 <!-- ════ BLOCO 8 - OFERTA ════ -->
 <section class="oferta" id="oferta">
   <div class="container">
-    <h2 class="sec-title display" style="color:var(--texto);">Agora, escolha a melhor <em style="color:var(--destaque);">opção para você</em></h2>
-
-    <div class="planos-grid">
-
-      <!-- Plano Básico -->
-      <div>
-        <div class="plano-card">
-          <div class="plano-header basic-header">
-            <div class="plano-title basic-title">Plano Básico</div>
-          </div>
-          <div class="plano-mockup-area" style="background:white;">
-            <img src="images/plano-basico.webp" alt="Plano Básico" style="max-width:260px; width:100%; height:auto; display:block; margin:0 auto;">
-          </div>
-          <div style="border-top:1px solid #F3F4F6;"></div>
-          <div class="plano-body">
-            <ul class="plano-checklist">
-              <li>Kit Joguinhos das Sílabas (em PDF)</li>
-            </ul>
-            <div style="border-top:1px solid #F3F4F6; margin-bottom:16px;"></div>
-            <div class="plano-price">
-              <div class="plano-new">R$17,90</div>
-              <div class="plano-parcelas">ou 2x de R$9,42</div>
-            </div>
-            <a href="https://pay.hotmart.com/Y105924383R?off=ayo8pnrq&checkoutMode=10" class="btn-plano basic-btn" style="background:var(--cta); color:white; box-shadow:0 6px 20px rgba(42,157,92,0.3);">Quero somente o básico</a>
-            <div style="margin-top:14px; text-align:center; font-size:13px; font-weight:800; color:#DC2626;">Temos uma oferta ainda mais VANTAJOSA pra você! Veja abaixo</div>
-            <div style="text-align:center; margin-top:6px;">
-              <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 4L14 14L24 4" stroke="#DC2626" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4 16L14 26L24 16" stroke="#DC2626" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-        </div>
+    <p style="text-align:center; font-size:clamp(20px,3.5vw,32px); font-weight:800; color:var(--texto); margin-bottom:8px;">
+      DESCONTO EXCLUSIVO DE <strong style="color:#DC2626;">90%</strong> SOMENTE HOJE!
+    </p>
+    <div style="text-align:center; margin-bottom:28px;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:var(--escuro); border-radius:12px; padding:10px 24px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span style="font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; color:var(--acento); letter-spacing:0.08em;" id="oferta-countdown">23:59:59</span>
       </div>
+    </div>
+    <script>
+      (function(){
+        const key = 'cd_oferta_exclusiva';
+        let end = parseInt(localStorage.getItem(key) || '0');
+        if (!end || end < Date.now()) {
+          end = Date.now() + 23*3600000 + 59*60000 + 59*1000;
+          localStorage.setItem(key, end);
+        }
+        function tick() {
+          const diff = Math.max(0, end - Date.now());
+          const h = String(Math.floor(diff/3600000)).padStart(2,'0');
+          const m = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+          const s = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+          const el = document.getElementById('oferta-countdown');
+          if (el) el.textContent = h+':'+m+':'+s;
+          if (diff > 0) setTimeout(tick, 1000);
+        }
+        tick();
+      })();
+    </script>
+    <div style="text-align:center; margin-bottom:32px;">
+      <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4L14 14L24 4" stroke="var(--destaque)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 16L14 26L24 16" stroke="var(--destaque)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
 
+    <div style="max-width:480px; margin:0 auto;">
       <!-- Plano Completo -->
       <div class="plano-card destaque">
-        <div class="plano-header complete-header">
-          <div class="plano-title complete-title">PLANO COMPLETO</div>
+        <div class="plano-header" style="background:var(--escuro); text-align:center; padding:14px 24px;">
+          <div class="plano-title" style="color:var(--acento); font-size:18px;">KIT ALFABETIZAÇÃO DIVERTIDA</div>
         </div>
-        <p style="text-align:center; font-size:13px; font-weight:800; color:var(--texto); padding:10px 20px 4px;">✅ TODOS OS BÔNUS INCLUSOS</p>
         <div class="plano-mockup-area" style="background:white;">
-            <img src="images/plano-completo.webp" alt="Plano Completo" style="max-width:260px; width:100%; height:auto; display:block; margin:0 auto;">
-          </div>
-          <p style="text-align:center; font-size:13px; font-weight:800; color:var(--texto); padding:10px 20px 0;">Todos os materiais na versão PDF (receba imediato)</p>
-          <div style="border-top:1px solid #F3F4F6;"></div>
+          <img src="images/plano-completo.webp" loading="lazy" decoding="async" alt="Plano Completo" style="max-width:260px; width:100%; height:auto; display:block; margin:0 auto;">
+        </div>
+        <p style="text-align:center; font-size:13px; font-weight:800; color:var(--texto); padding:10px 20px 0;">Todos os materiais na versão PDF (receba imediato)</p>
+        <div style="border-top:1px solid #F3F4F6;"></div>
         <div class="plano-body">
           <ul class="plano-checklist" style="gap:0;">
             <li style="border-bottom:1px solid #F3F4F6; padding-bottom:9px;">Kit Joguinhos das Sílabas</li>
@@ -1621,18 +1343,18 @@ footer a:hover { color: white; }
           <div style="border-top:1px solid #F3F4F6; margin-bottom:16px;"></div>
           <div class="plano-price">
             <div class="plano-old">De <span style="text-decoration:line-through; color:#EF4444;">R$197,00</span> por</div>
-            <div class="plano-new">R$27,90</div>
-            <div class="plano-parcelas">ou 3x de R$9,96</div>
+            <div class="plano-new">R$19,90</div>
+            <div class="plano-parcelas">ou 3x de R$6,90</div>
           </div>
           <div style="border-top:1px solid #F3F4F6; margin:12px 0;"></div>
           <div style="text-align:center; margin-bottom:14px;">
-            <span class="plano-economia" style="background:var(--acento); color:#1a1a1a;">Você economiza R$169,10!</span>
+            <span class="plano-economia" style="background:var(--acento); color:#1a1a1a;">Você economiza R$177,10!</span>
           </div>
-          <a href="https://pay.hotmart.com/V105924470G?off=yk4dlij4&checkoutMode=10" class="btn-plano complete-btn">QUERO O PLANO COMPLETO</a>
-          <p style="text-align:center; font-size:13px; font-weight:600; color:var(--cinza); margin-top:12px;"><strong style="color:var(--texto);">APROVEITE AGORA:</strong> você não vai encontrar esse preço depois!</p>
+          <a href="https://pay.hotmart.com/V105924470G?off=yk4dlij4&checkoutMode=10" class="btn-plano complete-btn">QUERO O KIT AGORA</a>
+          <p style="text-align:center; font-size:13px; font-weight:400; color:var(--texto); margin-top:12px;"><strong>APROVEITE AGORA:</strong> você não vai encontrar esse preço depois!</p>
+          <img src="images/formas-de-pagamento.webp" loading="lazy" decoding="async" alt="Formas de pagamento" style="max-width:280px; width:100%; height:auto; display:block; margin:12px auto 0;">
         </div>
       </div>
-
     </div>
 
   </div>
@@ -1641,9 +1363,9 @@ footer a:hover { color: white; }
 <!-- ════ BLOCO 9 - GARANTIA ════ -->
 <section class="garantia">
   <div class="container">
-    <h2 class="sec-title display">Garantia de <em>Satisfação Total</em></h2>
+    <h2 class="sec-title display" style="text-transform:uppercase; color:white;">GARANTIA DE SATISFAÇÃO TOTAL</h2>
     <div class="garantia-box">
-      <img src="images/garantia.webp" alt="Garantia 7 dias" style="width:180px; height:180px; object-fit:contain; flex-shrink:0;">
+      <img src="images/garantia.webp" loading="lazy" decoding="async" alt="Garantia 7 dias" style="width:180px; height:180px; object-fit:contain; flex-shrink:0;">
       <div class="garantia-text">
         <h3>Risco zero pra você!</h3>
         <p>Se, por qualquer motivo, você sentir que o material não foi útil ou que a criança não se adaptou, é só nos avisar dentro desse prazo.</p>
@@ -1656,7 +1378,7 @@ footer a:hover { color: white; }
 <!-- ════ BLOCO 10 - FAQ ════ -->
 <section class="faq">
   <div class="container">
-    <h2 class="sec-title display">Perguntas <em>Frequentes</em></h2>
+    <h2 class="sec-title display">Perguntas Frequentes</h2>
 
     <div class="faq-list">
       <div class="faq-item">
@@ -1778,6 +1500,8 @@ function toggleFaq(btn) {
         card.style.cssText = 'background:none;border:none;padding:0;border-radius:12px;overflow:hidden;min-height:auto;';
         const img = document.createElement('img');
         img.src = s.img;
+        img.loading = 'lazy';
+        img.decoding = 'async';
         img.alt = s.label;
         img.style.cssText = 'width:100%;height:auto;display:block;border-radius:12px;';
         card.appendChild(img);
