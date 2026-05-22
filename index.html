@@ -730,6 +730,7 @@ section { width: 100%; }
   background: #F3F4F6;
   padding: 68px 20px;
   color: var(--texto);
+  scroll-margin-top: 0px;
 }
 .oferta .sec-title { color: white; }
 .oferta .divider-pill { background: var(--acento); }
@@ -1028,7 +1029,7 @@ footer a:hover { color: white; }
     </div>
 
     <div style="text-align:center; margin-bottom:8px;">
-      <a href="#oferta" class="btn-cta">ADQUIRIR AGORA</a>
+      <a href="#oferta" class="btn-cta" onclick="event.preventDefault(); document.getElementById('oferta').scrollIntoView({behavior:'smooth', block:'start'});">ADQUIRIR AGORA</a>
     </div>
 
     <!-- Cards informativos -->
