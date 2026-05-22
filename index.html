@@ -1029,7 +1029,7 @@ footer a:hover { color: white; }
     </div>
 
     <div style="text-align:center; margin-bottom:8px;">
-      <a href="#oferta" class="btn-cta" onclick="event.preventDefault(); document.getElementById('oferta').scrollIntoView({behavior:'smooth', block:'start'});">ADQUIRIR AGORA</a>
+      <a href="#oferta" class="btn-cta">ADQUIRIR AGORA</a>
     </div>
 
     <!-- Cards informativos -->
@@ -1571,8 +1571,12 @@ function toggleFaq(btn) {
 // ─── SMOOTH SCROLL ───
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
   });
 });
 </script>
