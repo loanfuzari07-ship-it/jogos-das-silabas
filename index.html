@@ -1028,7 +1028,17 @@ footer a:hover { color: white; }
     </div>
 
     <div style="text-align:center; margin-bottom:8px;">
-      <a href="#oferta" class="btn-cta">ADQUIRIR AGORA</a>
+      <a href="#oferta" class="btn-cta" id="btn-hero-cta">ADQUIRIR AGORA</a>
+      <script>
+        (function(){
+          var btn = document.getElementById('btn-hero-cta');
+          function updateAnchor() {
+            btn.href = window.innerWidth <= 640 ? '#bonus' : '#oferta';
+          }
+          updateAnchor();
+          window.addEventListener('resize', updateAnchor);
+        })();
+      </script>
     </div>
 
     <!-- Cards informativos -->
@@ -1194,7 +1204,7 @@ footer a:hover { color: white; }
 </section>
 
 <!-- ════ BLOCO 7 - BÔNUS ════ -->
-<section class="bonus">
+<section class="bonus" id="bonus">
   <div class="container">
     <p style="text-align:center; color:white; font-size:clamp(18px,2.8vw,24px); font-family:'Poppins',cursive; font-weight:700; margin-bottom:2px;">E não para por aí…</p>
     <p style="text-align:center; color:white; font-size:clamp(18px,2.8vw,24px); font-family:'Poppins',cursive; font-weight:700; margin-bottom:16px;">Você também vai receber</p>
